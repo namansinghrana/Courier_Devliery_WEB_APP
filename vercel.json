@@ -1,5 +1,42 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    // Frontend Routes (React)
+    { "src": "/", "dest": "/" },
+    { "src": "/signup", "dest": "/signup" },
+    { "src": "/order", "dest": "/order" },
+    { "src": "/dashboard", "dest": "/dashboard" },
+    { "src": "/history", "dest": "/history" },
+    { "src": "/userProfile", "dest": "/userProfile" },
+
+    // Backend API Routes (Express)
+    { "src": "/api/signup", "dest": "/api/userController/signup" },
+    { "src": "/api/login", "dest": "/api/userController/login" },
+    { "src": "/api/logout", "dest": "/api/userController/logout" },
+    { "src": "/api/userProfile", "dest": "/api/userController/getLoggedInUserDetail" },
+    { "src": "/api/admin/userList", "dest": "/api/adminController/getAllUsers" },
+
+    { "src": "/api/createDelivery", "dest": "/api/deliveryController/createDelivery" },
+    { "src": "/api/myorder", "dest": "/api/deliveryController/getMyOrders" },
+    { "src": "/api/cancel/:id", "dest": "/api/deliveryController/cancelMyDelivery" },
+    { "src": "/api/getMonthWise/:year/month-wise", "dest": "/api/deliveryController/getMonthWiseDelivery" },
+    { "src": "/api/countdelivery", "dest": "/api/deliveryController/countDelivery" },
+
+    { "src": "/api/admin/deliveries", "dest": "/api/adminController/getAllOrders" },
+    { "src": "/api/admin/delivery/:id", "dest": "/api/adminController/updateDeliveryStatus" },
+    { "src": "/api/admin/delivery/cancel/:id", "dest": "/api/adminController/deliveryCancel" },
+
+    { "src": "/api/get-count", "dest": "/api/countController/getSaveCount" }
+  ]
+}
