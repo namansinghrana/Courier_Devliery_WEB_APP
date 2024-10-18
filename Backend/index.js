@@ -5,7 +5,7 @@ const app = require('./app');
 const cors = require('cors');
 
  const corsOptions ={
-     origin:'https://http://localhost:5000',
+     origin:'https://courier-devliery-web-1k482udzk-youtubesasukes-projects.vercel.app/',
      credentials:true,            //access-control-allow-credentials:true
      optionSuccessStatus:200,
      'Access-Control-Allow-Credentials': true
