@@ -16,6 +16,6 @@ app.use(cors());
 connectwithDB();
 
 
-app.listen(process.env.PORT || 5000,()=>{
+app.listen("https://courier-devliery-web-1k482udzk-youtubesasukes-projects.vercel.app" || 5000,()=>{
     console.log(`Server running on ${process.env.PORT}`);
 });
