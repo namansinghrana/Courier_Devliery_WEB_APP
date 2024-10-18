@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:3000/",
+  "proxy": "https://courier-devliery-web-app-hxz9-youtubesasukes-projects.vercel.app/?vercelToolbarCode=zpRGYtKt2DQNXEO",
   "name": "frontend_v2",
   "version": "0.1.0",
   "private": true,
