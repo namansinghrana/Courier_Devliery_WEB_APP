@@ -5,7 +5,7 @@ const app = require('./app');
 const cors = require('cors');
 
  const corsOptions ={
-     origin:'https://courier-devliery-web-9v0ryedpj-youtubesasukes-projects.vercel.app/', 
+     origin:'https://courier-devliery-web-app.vercel.app/', 
      methods:["POST","GET"],
      credentials:true,            //access-control-allow-credentials:true
      optionSuccessStatus:200,
